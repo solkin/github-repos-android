@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="context_menu_items">
+        <item>@string/open_repo</item>
+        <item>@string/open_profile</item>
+    </string-array>
+
+    <array name="context_menu_icons">
+        <item>@drawable/repo</item>
+        <item>@drawable/profile</item>
+    </array>
+
+</resources>

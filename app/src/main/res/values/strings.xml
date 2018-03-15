@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">GitHubRepos</string>
+    <string name="retry">Retry</string>
+    <string name="error_message">Failed to load repos list</string>
+    <string name="open_repo">Open repository</string>
+    <string name="open_profile">Open user profile</string>
+</resources>
