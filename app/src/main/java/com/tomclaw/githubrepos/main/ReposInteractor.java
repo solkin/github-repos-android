@@ -21,9 +21,12 @@ public interface ReposInteractor {
     class ReposInteractorImpl implements ReposInteractor {
 
         private int reposPerPage;
-        private @NonNull String accessToken;
-        private @NonNull GitHubApi api;
-        private @NonNull SchedulersFactory schedulers;
+        private @NonNull
+        String accessToken;
+        private @NonNull
+        GitHubApi api;
+        private @NonNull
+        SchedulersFactory schedulers;
 
         public ReposInteractorImpl(int reposPerPage,
                                    @NonNull String accessToken,

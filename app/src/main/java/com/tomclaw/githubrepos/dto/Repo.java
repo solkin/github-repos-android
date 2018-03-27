@@ -11,10 +11,18 @@ import com.google.gson.annotations.SerializedName;
  */
 public class Repo implements Parcelable {
 
-    private @NonNull String name;
-    private @NonNull String description;
-    private @NonNull @SerializedName("html_url") String url;
-    private @NonNull Owner owner;
+    @NonNull
+    private String name;
+
+    @NonNull
+    private String description;
+
+    @NonNull
+    @SerializedName("html_url")
+    private String url;
+
+    @NonNull
+    private Owner owner;
 
     public Repo(@NonNull String name,
                 @NonNull String description,

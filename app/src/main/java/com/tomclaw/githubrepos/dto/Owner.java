@@ -11,8 +11,12 @@ import com.google.gson.annotations.SerializedName;
  */
 public class Owner implements Parcelable {
 
-    private @NonNull String login;
-    private @NonNull @SerializedName("html_url") String url;
+    @NonNull
+    private String login;
+
+    @NonNull
+    @SerializedName("html_url")
+    private String url;
 
     public Owner(@NonNull String login,
                  @NonNull String url) {

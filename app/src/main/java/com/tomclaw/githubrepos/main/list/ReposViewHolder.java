@@ -6,8 +6,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.TextView;
 
-import com.tomclaw.githubrepos.R;
 import com.jakewharton.rxrelay2.PublishRelay;
+import com.tomclaw.githubrepos.R;
 
 /**
  * Created by solkin on 20/01/2018.

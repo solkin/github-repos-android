@@ -9,9 +9,11 @@ import com.tomclaw.githubrepos.R;
  */
 public interface ResourceProvider {
 
-    @ArrayRes int getMenuItems();
+    @ArrayRes
+    int getMenuItems();
 
-    @ArrayRes int getMenuIcons();
+    @ArrayRes
+    int getMenuIcons();
 
     class ResourceProviderImpl implements ResourceProvider {
 

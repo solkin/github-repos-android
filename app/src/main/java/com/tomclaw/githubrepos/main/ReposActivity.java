@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 
+import com.jakewharton.rxrelay2.PublishRelay;
 import com.tomclaw.githubrepos.App;
 import com.tomclaw.githubrepos.R;
 import com.tomclaw.githubrepos.di.ReposModule;
@@ -13,7 +14,6 @@ import com.tomclaw.githubrepos.main.list.RepoItem;
 import com.tomclaw.githubrepos.main.list.ReposAdapter;
 import com.tomclaw.githubrepos.util.DataProvider;
 import com.tomclaw.githubrepos.util.Logger;
-import com.jakewharton.rxrelay2.PublishRelay;
 
 import javax.inject.Inject;
 

@@ -9,11 +9,16 @@ import android.support.annotation.NonNull;
  */
 public class RepoItem implements Parcelable {
 
-    private final @NonNull String name;
-    private final @NonNull String description;
-    private final @NonNull String ownerLogin;
-    private final @NonNull String repoUrl;
-    private final @NonNull String profileUrl;
+    private final @NonNull
+    String name;
+    private final @NonNull
+    String description;
+    private final @NonNull
+    String ownerLogin;
+    private final @NonNull
+    String repoUrl;
+    private final @NonNull
+    String profileUrl;
     private final boolean isShowProgress;
     private final boolean isShowError;
 

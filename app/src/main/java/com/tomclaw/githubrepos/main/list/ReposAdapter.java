@@ -7,9 +7,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.jakewharton.rxrelay2.PublishRelay;
 import com.tomclaw.githubrepos.R;
 import com.tomclaw.githubrepos.util.DataProvider;
-import com.jakewharton.rxrelay2.PublishRelay;
 
 /**
  * Created by solkin on 20/01/2018.

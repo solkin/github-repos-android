@@ -4,12 +4,12 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 
+import com.jakewharton.rxrelay2.PublishRelay;
 import com.tomclaw.githubrepos.dto.Repo;
 import com.tomclaw.githubrepos.main.list.RepoItem;
 import com.tomclaw.githubrepos.util.DataProvider;
 import com.tomclaw.githubrepos.util.Logger;
 import com.tomclaw.githubrepos.util.SchedulersFactory;
-import com.jakewharton.rxrelay2.PublishRelay;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -40,19 +40,40 @@ public interface ReposPresenter {
         private static final String KEY_ERROR = "error";
         private static final String KEY_REPOS = "repos";
 
-        private @NonNull String user;
-        private @NonNull DataProvider<RepoItem> dataProvider;
-        private @NonNull RepoItemConverter repoItemConverter;
-        private @NonNull PublishRelay<Boolean> scrollRelay;
-        private @NonNull PublishRelay<RepoItem> clickRelay;
-        private @NonNull ResourceProvider resourceProvider;
-        private @NonNull ReposInteractor interactor;
-        private @NonNull SchedulersFactory schedulers;
-        private Logger logger;
-        private @Nullable Bundle state;
+        @NonNull
+        private String user;
 
-        private @Nullable ReposView view;
-        private @Nullable ReposRouter router;
+        @NonNull
+        private DataProvider<RepoItem> dataProvider;
+
+        @NonNull
+        private RepoItemConverter repoItemConverter;
+
+        @NonNull
+        private PublishRelay<Boolean> scrollRelay;
+
+        @NonNull
+        private PublishRelay<RepoItem> clickRelay;
+
+        @NonNull
+        private ResourceProvider resourceProvider;
+
+        @NonNull
+        private ReposInteractor interactor;
+
+        @NonNull
+        private SchedulersFactory schedulers;
+
+        private Logger logger;
+
+        @Nullable
+        private Bundle state;
+
+        @Nullable
+        private ReposView view;
+
+        @Nullable
+        private ReposRouter router;
 
         private final CompositeDisposable subscriptions;
 

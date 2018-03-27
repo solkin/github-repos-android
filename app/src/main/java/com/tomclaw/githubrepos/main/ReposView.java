@@ -10,10 +10,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ViewFlipper;
 
+import com.jakewharton.rxrelay2.PublishRelay;
 import com.tomclaw.githubrepos.R;
 import com.tomclaw.githubrepos.main.list.ReposAdapter;
 import com.tomclaw.githubrepos.util.MenuAdapter;
-import com.jakewharton.rxrelay2.PublishRelay;
 
 import java.util.List;
 

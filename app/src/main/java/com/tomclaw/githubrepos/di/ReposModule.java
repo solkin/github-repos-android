@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 
+import com.jakewharton.rxrelay2.PublishRelay;
 import com.tomclaw.githubrepos.core.GitHubApi;
 import com.tomclaw.githubrepos.main.RepoItemConverter;
 import com.tomclaw.githubrepos.main.ReposInteractor;
@@ -14,7 +15,6 @@ import com.tomclaw.githubrepos.util.DataProvider;
 import com.tomclaw.githubrepos.util.Logger;
 import com.tomclaw.githubrepos.util.PerActivity;
 import com.tomclaw.githubrepos.util.SchedulersFactory;
-import com.jakewharton.rxrelay2.PublishRelay;
 
 import dagger.Module;
 import dagger.Provides;
@@ -29,9 +29,14 @@ import static com.tomclaw.githubrepos.core.Config.USER;
 @Module
 public class ReposModule {
 
-    @Nullable private Bundle presenterState;
-    @NonNull private PublishRelay<Boolean> scrollRelay;
-    @NonNull private PublishRelay<RepoItem> clickRelay;
+    @Nullable
+    private Bundle presenterState;
+
+    @NonNull
+    private PublishRelay<Boolean> scrollRelay;
+
+    @NonNull
+    private PublishRelay<RepoItem> clickRelay;
 
     public ReposModule(@Nullable Bundle presenterState,
                        @NonNull PublishRelay<Boolean> scrollRelay,
