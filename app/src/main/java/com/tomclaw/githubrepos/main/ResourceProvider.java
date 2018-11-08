@@ -1,6 +1,6 @@
 package com.tomclaw.githubrepos.main;
 
-import android.support.annotation.ArrayRes;
+import androidx.annotation.ArrayRes;
 
 import com.tomclaw.githubrepos.R;
 

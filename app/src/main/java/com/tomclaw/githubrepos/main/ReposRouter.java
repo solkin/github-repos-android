@@ -1,6 +1,6 @@
 package com.tomclaw.githubrepos.main;
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
 /**
  * Created by solkin on 20/01/2018.

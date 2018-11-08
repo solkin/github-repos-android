@@ -1,6 +1,6 @@
 package com.tomclaw.githubrepos.main;
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
 import com.tomclaw.githubrepos.core.GitHubApi;
 import com.tomclaw.githubrepos.dto.Repo;

@@ -2,7 +2,7 @@ package com.tomclaw.githubrepos.main.list;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
 /**
  * Created by solkin on 20/01/2018.
