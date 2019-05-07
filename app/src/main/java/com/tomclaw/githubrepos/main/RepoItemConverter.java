@@ -20,9 +20,11 @@ public interface RepoItemConverter {
 
         @Override
         @NonNull
-        public List<RepoItem> convert(@NonNull List<Repo> repos,
-                                      boolean isLoading,
-                                      boolean isError) {
+        public List<RepoItem> convert(
+                @NonNull List<Repo> repos,
+                boolean isLoading,
+                boolean isError
+        ) {
             List<RepoItem> items = new ArrayList<>();
             int i = 0;
             for (Repo repo : repos) {

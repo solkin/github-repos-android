@@ -28,10 +28,12 @@ public interface ReposInteractor {
         private @NonNull
         SchedulersFactory schedulers;
 
-        public ReposInteractorImpl(int reposPerPage,
-                                   @NonNull String accessToken,
-                                   @NonNull GitHubApi api,
-                                   @NonNull SchedulersFactory schedulers) {
+        public ReposInteractorImpl(
+                int reposPerPage,
+                @NonNull String accessToken,
+                @NonNull GitHubApi api,
+                @NonNull SchedulersFactory schedulers
+        ) {
             this.reposPerPage = reposPerPage;
             this.accessToken = accessToken;
             this.api = api;

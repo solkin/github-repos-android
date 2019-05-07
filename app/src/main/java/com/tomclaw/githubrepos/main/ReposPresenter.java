@@ -1,6 +1,7 @@
 package com.tomclaw.githubrepos.main;
 
 import android.os.Bundle;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
@@ -82,16 +83,18 @@ public interface ReposPresenter {
         private boolean isError;
         private ArrayList<Repo> repos = new ArrayList<>();
 
-        public ReposPresenterImpl(@NonNull String user,
-                                  @NonNull DataProvider<RepoItem> dataProvider,
-                                  @NonNull RepoItemConverter repoItemConverter,
-                                  @NonNull PublishRelay<Boolean> scrollRelay,
-                                  @NonNull PublishRelay<RepoItem> clickRelay,
-                                  @NonNull ResourceProvider resourceProvider,
-                                  @NonNull ReposInteractor interactor,
-                                  @NonNull SchedulersFactory schedulers,
-                                  @NonNull Logger logger,
-                                  @Nullable Bundle state) {
+        public ReposPresenterImpl(
+                @NonNull String user,
+                @NonNull DataProvider<RepoItem> dataProvider,
+                @NonNull RepoItemConverter repoItemConverter,
+                @NonNull PublishRelay<Boolean> scrollRelay,
+                @NonNull PublishRelay<RepoItem> clickRelay,
+                @NonNull ResourceProvider resourceProvider,
+                @NonNull ReposInteractor interactor,
+                @NonNull SchedulersFactory schedulers,
+                @NonNull Logger logger,
+                @Nullable Bundle state
+        ) {
             this.user = user;
             this.dataProvider = dataProvider;
             this.repoItemConverter = repoItemConverter;

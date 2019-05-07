@@ -1,11 +1,13 @@
 package com.tomclaw.githubrepos.main;
 
 import android.content.Context;
+
 import androidx.annotation.ArrayRes;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
 import android.view.View;
 import android.widget.Button;
 import android.widget.ViewFlipper;
@@ -88,9 +90,11 @@ public interface ReposView {
         }
 
         @Override
-        public void showPopup(@ArrayRes int items,
-                              @ArrayRes int icons,
-                              @NonNull List<String> urls) {
+        public void showPopup(
+                @ArrayRes int items,
+                @ArrayRes int icons,
+                @NonNull List<String> urls
+        ) {
             new AlertDialog.Builder(context).setAdapter(
                     new MenuAdapter(context, items, icons),
                     (dialog, position) -> menuRelay.accept(urls.get(position))
