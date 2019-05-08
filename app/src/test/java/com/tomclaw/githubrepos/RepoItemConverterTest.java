@@ -44,7 +44,7 @@ public class RepoItemConverterTest {
     }
 
     @Test
-    public void convert_correctItemConvert() throws Exception {
+    public void convert_correctItemConvert() {
         Repo firstRepo = randomRepo();
         Repo lastRepo = randomRepo();
         List<Repo> repoList = asList(firstRepo, lastRepo);

@@ -2,6 +2,7 @@ package com.tomclaw.githubrepos;
 
 import android.os.Bundle;
 
+import com.jakewharton.rxrelay2.PublishRelay;
 import com.tomclaw.githubrepos.dto.Repo;
 import com.tomclaw.githubrepos.main.RepoItemConverter;
 import com.tomclaw.githubrepos.main.ReposInteractor;
@@ -13,7 +14,6 @@ import com.tomclaw.githubrepos.main.list.RepoItem;
 import com.tomclaw.githubrepos.util.DataProvider;
 import com.tomclaw.githubrepos.util.Logger;
 import com.tomclaw.githubrepos.util.SchedulersFactory;
-import com.jakewharton.rxrelay2.PublishRelay;
 
 import org.junit.Before;
 import org.junit.Rule;
@@ -51,13 +51,20 @@ public class ReposPresenterTest {
 
     private String user;
 
-    @Mock DataProvider<RepoItem> dataProvider;
-    @Mock ResourceProvider resourceProvider;
-    @Mock ReposInteractor interactor;
-    @Mock SchedulersFactory schedulers;
-    @Mock Logger logger;
-    @Mock ReposView view;
-    @Mock ReposRouter router;
+    @Mock
+    DataProvider<RepoItem> dataProvider;
+    @Mock
+    ResourceProvider resourceProvider;
+    @Mock
+    ReposInteractor interactor;
+    @Mock
+    SchedulersFactory schedulers;
+    @Mock
+    Logger logger;
+    @Mock
+    ReposView view;
+    @Mock
+    ReposRouter router;
 
     private RepoItemConverter repoItemConverter;
 
@@ -81,7 +88,7 @@ public class ReposPresenterTest {
     }
 
     @Test
-    public void attachView_loadRepoListWithCorrectUser_reposNeverLoaded() throws Exception {
+    public void attachView_loadRepoListWithCorrectUser_reposNeverLoaded() {
         ReposPresenter presenter = createReposPresenter(null);
 
         presenter.attachView(view);
@@ -90,7 +97,7 @@ public class ReposPresenterTest {
     }
 
     @Test
-    public void attachView_showProgress_reposNeverLoaded() throws Exception {
+    public void attachView_showProgress_reposNeverLoaded() {
         ReposPresenter presenter = createReposPresenter(null);
 
         presenter.attachView(view);
@@ -99,7 +106,7 @@ public class ReposPresenterTest {
     }
 
     @Test
-    public void attachView_showContent_reposLoaded() throws Exception {
+    public void attachView_showContent_reposLoaded() {
         ReposPresenter presenter = createReposPresenter(null);
 
         presenter.attachView(view);
@@ -108,7 +115,7 @@ public class ReposPresenterTest {
     }
 
     @Test
-    public void scrollEvent_loadNextPage() throws Exception {
+    public void scrollEvent_loadNextPage() {
         ReposPresenter presenter = createReposPresenter(null);
         presenter.attachView(view);
         clearInvocations(interactor);
@@ -119,7 +126,7 @@ public class ReposPresenterTest {
     }
 
     @Test
-    public void clickEvent_showPopup() throws Exception {
+    public void clickEvent_showPopup() {
         RepoItem item = randomRepoItem();
         when(resourceProvider.getMenuItems()).thenReturn(1);
         when(resourceProvider.getMenuIcons()).thenReturn(2);
@@ -137,7 +144,7 @@ public class ReposPresenterTest {
     }
 
     @Test
-    public void attachView_showError_reposNotLoaded() throws Exception {
+    public void attachView_showError_reposNotLoaded() {
         ReposPresenter presenter = createReposPresenter(null);
         mockInteractorWithError();
 
@@ -147,7 +154,7 @@ public class ReposPresenterTest {
     }
 
     @Test
-    public void attachView_updateListNotInvoked_reposNeverLoaded() throws Exception {
+    public void attachView_updateListNotInvoked_reposNeverLoaded() {
         ReposPresenter presenter = createReposPresenter(null);
         mockInteractorWithError();
 
@@ -157,7 +164,7 @@ public class ReposPresenterTest {
     }
 
     @Test
-    public void attachView_updateList_reposAtLeastOnceLoaded() throws Exception {
+    public void attachView_updateList_reposAtLeastOnceLoaded() {
         PublishRelay<Object> retryClickRelay = PublishRelay.create();
         when(view.retryClicks()).thenReturn(retryClickRelay);
         ReposPresenter presenter = createReposPresenter(null);
@@ -171,7 +178,7 @@ public class ReposPresenterTest {
     }
 
     @Test
-    public void attachView_updateList_reposLoaded() throws Exception {
+    public void attachView_updateList_reposLoaded() {
         ReposPresenter presenter = createReposPresenter(null);
 
         presenter.attachView(view);
@@ -180,7 +187,7 @@ public class ReposPresenterTest {
     }
 
     @Test
-    public void menuClickEvent_openBrowser() throws Exception {
+    public void menuClickEvent_openBrowser() {
         PublishRelay<String> menuClickRelay = PublishRelay.create();
         when(view.menuClicks()).thenReturn(menuClickRelay);
 
@@ -194,7 +201,7 @@ public class ReposPresenterTest {
     }
 
     @Test
-    public void retryClickEvent_loadReposList() throws Exception {
+    public void retryClickEvent_loadReposList() {
         PublishRelay<Object> retryClickRelay = PublishRelay.create();
         when(view.retryClicks()).thenReturn(retryClickRelay);
         mockInteractorWithError();
