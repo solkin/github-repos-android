@@ -45,5 +45,5 @@ dependencies {
     testImplementation("uk.co.jemos.podam:podam:7.1.0.RELEASE") {
         exclude module: 'jsr250-api'
     }
-    testImplementation "org.mockito:mockito-core:2.8.47"
+    testImplementation "org.mockito:mockito-core:2.23.4"
 }
