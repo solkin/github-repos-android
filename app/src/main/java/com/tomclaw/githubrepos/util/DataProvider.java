@@ -27,4 +27,5 @@ public class DataProvider<A> {
     public void setData(List<A> data) {
         this.data = new ArrayList<>(data);
     }
+
 }

@@ -16,4 +16,5 @@ public class Logger {
     public void log(String message, Throwable ex) {
         Log.d(Config.LOG_TAG, message, ex);
     }
+
 }
