@@ -45,23 +45,18 @@ public interface ReposView {
     class ReposViewImpl implements ReposView {
 
         private final Context context;
-        private final View rootView;
         private final ReposAdapter adapter;
         private final ViewFlipper flipper;
-        private final RecyclerView recycler;
-        private final Button retryButton;
 
         private PublishRelay<Object> retryRelay = PublishRelay.create();
         private PublishRelay<String> menuRelay = PublishRelay.create();
 
         public ReposViewImpl(View rootView, ReposAdapter adapter) {
             this.context = rootView.getContext();
-            this.rootView = rootView;
             this.adapter = adapter;
             flipper = rootView.findViewById(R.id.flipper);
-            recycler = rootView.findViewById(R.id.recycler);
-            retryButton = rootView.findViewById(R.id.retry_button);
-
+            RecyclerView recycler = rootView.findViewById(R.id.recycler);
+            Button retryButton = rootView.findViewById(R.id.retry_button);
 
             LinearLayoutManager layoutManager = new LinearLayoutManager(
                     context,
