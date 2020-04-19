@@ -3,6 +3,7 @@ package com.tomclaw.githubrepos.main;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -65,7 +66,7 @@ public class ReposActivity extends AppCompatActivity implements ReposRouter {
     }
 
     @Override
-    protected void onSaveInstanceState(Bundle outState) {
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
         super.onSaveInstanceState(outState);
         outState.putBundle(KEY_PRESENTER_STATE, presenter.onSaveState());
     }
@@ -82,4 +83,5 @@ public class ReposActivity extends AppCompatActivity implements ReposRouter {
             logger.log("unable to start browser", ex);
         }
     }
+
 }
