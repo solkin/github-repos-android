@@ -2,23 +2,26 @@ package com.tomclaw.githubrepos.main.list;
 
 import android.os.Parcel;
 import android.os.Parcelable;
+
 import androidx.annotation.NonNull;
+
+import java.util.Objects;
 
 /**
  * Created by solkin on 20/01/2018.
  */
 public class RepoItem implements Parcelable {
 
-    private final @NonNull
-    String name;
-    private final @NonNull
-    String description;
-    private final @NonNull
-    String ownerLogin;
-    private final @NonNull
-    String repoUrl;
-    private final @NonNull
-    String profileUrl;
+    @NonNull
+    private final String name;
+    @NonNull
+    private final String description;
+    @NonNull
+    private final String ownerLogin;
+    @NonNull
+    private final String repoUrl;
+    @NonNull
+    private final String profileUrl;
     private final boolean isShowProgress;
     private final boolean isShowError;
 
@@ -38,12 +41,12 @@ public class RepoItem implements Parcelable {
         this.isShowError = isShowError;
     }
 
-    protected RepoItem(Parcel in) {
-        name = in.readString();
-        description = in.readString();
-        ownerLogin = in.readString();
-        repoUrl = in.readString();
-        profileUrl = in.readString();
+    protected RepoItem(@NonNull Parcel in) {
+        name = Objects.requireNonNull(in.readString());
+        description = Objects.requireNonNull(in.readString());
+        ownerLogin = Objects.requireNonNull(in.readString());
+        repoUrl = Objects.requireNonNull(in.readString());
+        profileUrl = Objects.requireNonNull(in.readString());
         isShowProgress = in.readByte() != 0;
         isShowError = in.readByte() != 0;
     }
@@ -108,4 +111,5 @@ public class RepoItem implements Parcelable {
             return new RepoItem[size];
         }
     };
+
 }
