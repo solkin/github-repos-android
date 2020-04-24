@@ -3,6 +3,7 @@ package com.tomclaw.githubrepos.main.list;
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
+
 import android.view.View;
 import android.widget.TextView;
 
@@ -21,7 +22,7 @@ class ReposViewHolder extends RecyclerView.ViewHolder {
     private View progressView;
     private View errorView;
 
-    public ReposViewHolder(@NonNull View itemView) {
+    ReposViewHolder(@NonNull View itemView) {
         super(itemView);
 
         cardView = itemView.findViewById(R.id.card_view);
@@ -32,8 +33,8 @@ class ReposViewHolder extends RecyclerView.ViewHolder {
         errorView = itemView.findViewById(R.id.error_view);
     }
 
-    public void bind(@NonNull RepoItem item,
-                     @NonNull PublishRelay<RepoItem> clickRelay) {
+    void bind(@NonNull RepoItem item,
+              @NonNull PublishRelay<RepoItem> clickRelay) {
         nameView.setText(item.getName());
         descriptionView.setText(item.getDescription());
         ownerView.setText(item.getOwnerLogin());
@@ -41,4 +42,5 @@ class ReposViewHolder extends RecyclerView.ViewHolder {
         errorView.setVisibility(item.isShowError() ? View.VISIBLE : View.GONE);
         cardView.setOnClickListener(view -> clickRelay.accept(item));
     }
+
 }
