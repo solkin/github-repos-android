@@ -1,8 +1,10 @@
 package com.tomclaw.githubrepos.main.list;
 
 import android.content.Context;
+
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -34,8 +36,9 @@ public class ReposAdapter extends RecyclerView.Adapter<ReposViewHolder> {
         this.clickRelay = clickRelay;
     }
 
+    @NonNull
     @Override
-    public ReposViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public ReposViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(context).inflate(R.layout.item_repo, parent, false);
         return new ReposViewHolder(view);
     }
@@ -57,4 +60,5 @@ public class ReposAdapter extends RecyclerView.Adapter<ReposViewHolder> {
     public int getItemCount() {
         return repos.size();
     }
+
 }
