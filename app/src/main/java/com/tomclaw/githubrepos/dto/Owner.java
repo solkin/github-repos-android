@@ -6,6 +6,8 @@ import androidx.annotation.NonNull;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.util.Objects;
+
 /**
  * Created by solkin on 20/01/2018.
  */
@@ -24,9 +26,9 @@ public class Owner implements Parcelable {
         this.url = url;
     }
 
-    protected Owner(Parcel in) {
-        login = in.readString();
-        url = in.readString();
+    private Owner(@NonNull Parcel in) {
+        login = Objects.requireNonNull(in.readString());
+        url = Objects.requireNonNull(in.readString());
     }
 
     @NonNull
@@ -61,4 +63,5 @@ public class Owner implements Parcelable {
             return new Owner[size];
         }
     };
+
 }
