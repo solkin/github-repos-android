@@ -6,6 +6,8 @@ import androidx.annotation.NonNull;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.util.Objects;
+
 /**
  * Created by solkin on 20/01/2018.
  */
@@ -34,11 +36,11 @@ public class Repo implements Parcelable {
         this.owner = owner;
     }
 
-    protected Repo(Parcel in) {
-        name = in.readString();
-        description = in.readString();
-        url = in.readString();
-        owner = in.readParcelable(Owner.class.getClassLoader());
+    private Repo(@NonNull Parcel in) {
+        name = Objects.requireNonNull(in.readString());
+        description = Objects.requireNonNull(in.readString());
+        url = Objects.requireNonNull(in.readString());
+        owner = Objects.requireNonNull(in.readParcelable(Owner.class.getClassLoader()));
     }
 
     @NonNull
