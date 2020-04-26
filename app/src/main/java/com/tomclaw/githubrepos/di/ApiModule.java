@@ -27,4 +27,5 @@ class ApiModule {
                 .build()
                 .create(GitHubApi.class);
     }
+
 }
