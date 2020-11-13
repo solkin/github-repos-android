@@ -39,8 +39,8 @@ dependencies {
     implementation 'com.google.dagger:dagger:2.24'
     annotationProcessor 'com.google.dagger:dagger-compiler:2.24'
     testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test:runner:1.2.0'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    androidTestImplementation 'androidx.test:runner:1.3.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
     testImplementation "org.slf4j:slf4j-simple:1.7.21"
     testImplementation("uk.co.jemos.podam:podam:7.1.0.RELEASE") {
         exclude module: 'jsr250-api'
